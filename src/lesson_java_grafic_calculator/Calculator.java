@@ -17,7 +17,7 @@ public class Calculator extends JFrame{
         
         // Объявление всех компонентов калькулятора
         JPanel windowContent;
-        JPanel p1;
+        JPanel p1, p2;
         JTextField displayField;
         JButton button0;
         JButton button1;
@@ -42,7 +42,7 @@ public class Calculator extends JFrame{
 
            super(s);
            windowContent = new JPanel();
-           
+
            // Задаём схему для этой панели
           BorderLayout bl = new BorderLayout();
           windowContent.setLayout(bl);
@@ -89,11 +89,20 @@ public class Calculator extends JFrame{
            p1.add(button9);
            p1.add(button0);
            p1.add(buttonPoint);
-           p1.add(buttonPlus);
            p1.add(buttonEqual);
 
            // Помещаем панель p1 в центральную область окна
            add("Center",p1);
+
+           // Задаём схему для этой панели
+           p2 = new JPanel();
+           GridLayout gl2 = new GridLayout(4,1);
+           p2.setLayout(gl2);
+
+           p2.add(buttonPlus);
+
+           // Помещаем панель p2 в южную область окна
+           add("East",p2);
 
        }
     }
