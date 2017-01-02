@@ -15,6 +15,7 @@ public class SimpleCalculator{
            s.setVisible(true);
            s.pack();
            s.setResizable(false);
+           s.setLocationRelativeTo(null);
            s.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
   }
     
