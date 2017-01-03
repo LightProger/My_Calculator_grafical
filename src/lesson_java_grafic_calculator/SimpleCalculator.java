@@ -1,6 +1,5 @@
 package lesson_java_grafic_calculator;
 
-import java.awt.*;
 import javax.swing.*;
 
 
