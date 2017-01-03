@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lesson_java_grafic_calculator;
 
 
@@ -11,7 +7,7 @@ import javax.swing.*;
 
 /**
  *
- * @author Александр
+ * @author Александр Никитченко
  */
 public class Calculator extends JFrame{
         
@@ -49,7 +45,7 @@ public class Calculator extends JFrame{
 
            // Создаём и отображаем поле
            // Добавляем его в Северную область окна
-           displayField = new JTextField(30);
+           displayField = new JTextField(20);
            add("North", displayField);
 
             // Создаём кнопки, используя конструктор
@@ -92,7 +88,7 @@ public class Calculator extends JFrame{
            p1.add(buttonEqual);
 
            // Помещаем панель p1 в центральную область окна
-           add("Center",p1);
+           add("Center", p1);
 
            // Задаём схему для этой панели
            p2 = new JPanel();
@@ -102,7 +98,7 @@ public class Calculator extends JFrame{
            p2.add(buttonPlus);
 
            // Помещаем панель p2 в южную область окна
-           add("East",p2);
+           add("East", p2);
 
        }
     }
