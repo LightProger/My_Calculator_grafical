@@ -85,13 +85,18 @@ public class CalculatorEngine implements ActionListener {
                 parent.displayField.setText(dispFieldText +
                         clickedButtonLabel);
             }
-            if(e.getSource() == parent.buttonPlusMinus ){
+            if(src == parent.buttonPlusMinus ){
                 currentResult = - displayValue;
                 parent.displayField.setText("" + currentResult);
             }
             // Обнуление дисплея калькулятора
-            if (e.getSource() == parent.buttonReset) {
+            if (src == parent.buttonReset) {
                 parent.displayField.setText(null);
+            }
+            // На ноль делить нельзя
+            if (selectedAction == '/' && displayValue == 0 && src == parent.buttonEqual){
+                JOptionPane.showMessageDialog(null, "Упс! На ноль делить нельзя!!!");
+                parent.displayField.setText("");
             }
 
         } catch (Exception e1){
