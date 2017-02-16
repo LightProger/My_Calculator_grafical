@@ -24,8 +24,7 @@ public class CalculatorEngine implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
 
-        //Обработка ошибок
-        try {
+
             // Получить источник действия
             JButton clickedButton = (JButton) e.getSource();
             String dispFieldText = parent.displayField.getText();
@@ -34,7 +33,12 @@ public class CalculatorEngine implements ActionListener {
             // если он не пустой.
             // Восклицательный знак – это оператор отрицания
             if (!"".equals(dispFieldText)) {
-                displayValue = Double.parseDouble(dispFieldText);
+                try {
+                    displayValue = Double.parseDouble(dispFieldText);
+                }catch (Exception e1){
+                    JOptionPane.showMessageDialog(null, "Введите цифры!!!");
+                    parent.displayField.setText(null);
+                }
 
             }
             Object src = e.getSource();
@@ -99,9 +103,7 @@ public class CalculatorEngine implements ActionListener {
                 parent.displayField.setText("");
             }
 
-        } catch (Exception e1){
-            parent.displayField.setText(null);
-        }
+
     }
 }
 
